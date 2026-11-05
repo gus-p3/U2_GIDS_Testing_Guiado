@@ -132,6 +132,23 @@ paths:
         "401":
           description: Unauthorized
   /tasks/{taskId}:
+    get:
+      summary: Get one owned task
+      description: >
+        Returns 404 both for a missing task and for another user's task,
+        so the response never discloses whether a foreign task exists.
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: taskId
+          required: true
+          schema: { type: string, pattern: '^[a-zA-Z0-9]{1,64}$' }
+      responses:
+        '200': { description: 'The task, wrapped in an "item" object' }
+        '400': { description: Malformed task id }
+        '401': { description: Missing or invalid access token }
+        '404': { description: Task not found (or owned by someone else) }
     patch:
       summary: Update task
       security:

@@ -1,0 +1,67 @@
+00:00 +0: loading test/accessibility_test.dart
+00:00 +0: test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:00 +1: test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:00 +2: test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:00 +3: test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:00 +4: test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:00 +5: test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:00 +6: test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:00 +7: test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:00 +8: test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:02 +9: test/auth_page_test.dart: register password: empty
+00:03 +10: test/auth_page_test.dart: register password: empty
+00:03 +11: test/auth_page_test.dart: register password: empty
+00:03 +12: test/task_list_view_test.dart: shows loading state
+00:03 +13: test/task_list_view_test.dart: shows loading state
+00:03 +14: test/screen_size_test.dart: login screen fits on small phone (iPhone SE 1st gen, 320x568)
+00:03 +15: test/screen_size_test.dart: login screen fits on small phone (iPhone SE 1st gen, 320x568)
+00:03 +16: test/screen_size_test.dart: login screen fits on small phone (iPhone SE 1st gen, 320x568)
+00:03 +17: test/screen_size_test.dart: login screen fits on small phone (iPhone SE 1st gen, 320x568)
+00:03 +18: test/screen_size_test.dart: login screen fits on small phone (iPhone SE 1st gen, 320x568)
+00:03 +19: test/auth_page_test.dart: register password: minimum (12)
+00:04 +20: test/auth_page_test.dart: register password: minimum (12)
+00:04 +21: test/task_list_view_test.dart: shows task data
+00:04 +22: test/task_list_view_test.dart: shows task data
+00:04 +23: test/task_list_view_test.dart: shows task data
+00:04 +24: test/task_list_view_test.dart: shows task data
+00:04 +25: test/task_list_view_test.dart: shows task data
+00:04 +26: test/task_list_view_test.dart: shows task data
+00:04 +27: test/accessibility_test.dart: login stays usable at text scale 2.0x
+00:04 +28: test/screen_size_test.dart: task list renders without overflow on tablet portrait (820x1180)
+00:04 +29: test/screen_size_test.dart: task list renders without overflow on tablet portrait (820x1180)
+00:04 +30: test/screen_size_test.dart: task list renders without overflow on tablet portrait (820x1180)
+00:04 +31: test/screen_size_test.dart: task list renders without overflow on tablet portrait (820x1180)
+00:05 +32: test/auth_page_test.dart: register password: over maximum (73 bytes)
+00:05 +33: test/auth_page_test.dart: register password: over maximum (73 bytes)
+00:05 +34: test/screen_size_test.dart: login screen fits on tablet portrait (820x1180)
+00:05 +35: test/task_list_view_test.dart: checkbox and delete report the right task
+00:05 +36: test/auth_page_test.dart: register password: 37 x "ñ" = 74 bytes
+00:05 +37: test/auth_page_test.dart: register password: 37 x "ñ" = 74 bytes
+00:05 +38: test/screen_size_test.dart: task list renders without overflow on desktop window (1280x800)
+00:05 +39: test/screen_size_test.dart: task list renders without overflow on desktop window (1280x800)
+00:05 +40: test/auth_page_test.dart: email is validated before sending
+00:05 +41: test/screen_size_test.dart: login screen fits on desktop window (1280x800)
+00:05 +42: test/screen_size_test.dart: login screen fits on desktop window (1280x800)
+00:05 +43: test/screen_size_test.dart: create dialog fits a small phone with the keyboard open
+00:07 +44: test/task_page_bugs_test.dart: BUG-001: tasks stay visible when marking one complete fails
+00:08 +45: test/task_page_bugs_test.dart: BUG-001: tasks stay visible when marking one complete fails
+00:08 +46: test/task_page_bugs_test.dart: BUG-001: tasks stay visible when marking one complete fails
+00:08 +47: test/task_page_bugs_test.dart: BUG-001: tasks stay visible when marking one complete fails
+00:08 +48: test/task_page_bugs_test.dart: BUG-001: tasks stay visible when marking one complete fails
+00:08 +49: test/task_page_bugs_test.dart: BUG-001: tasks stay visible when marking one complete fails
+00:08 +50: test/task_page_bugs_test.dart: BUG-001: tasks stay visible when marking one complete fails
+00:08 +51: test/task_page_bugs_test.dart: BUG-002: tapping Save twice quickly creates only one task
+00:09 +52: test/task_test.dart: parses a valid task
+00:09 +53: test/task_test.dart: rejects an empty title
+00:09 +54: test/task_test.dart: rejects a missing id
+00:09 +55: test/task_test.dart: accepts a title at the maximum allowed length (120)
+00:09 +56: test/task_test.dart: rejects a title one character over the maximum (121)
+00:09 +57: test/task_test.dart: accepts the minimum valid title (1 char)
+00:09 +58: test/task_test.dart: rejects malformed server data instead of crashing numeric id
+00:09 +59: test/task_test.dart: rejects malformed server data instead of crashing empty id
+00:09 +60: test/task_test.dart: rejects malformed server data instead of crashing numeric title
+00:09 +61: test/task_test.dart: rejects malformed server data instead of crashing null title
+00:09 +62: test/task_test.dart: rejects malformed server data instead of crashing string completed
+00:09 +63: test/task_test.dart: rejects malformed server data instead of crashing numeric description
+00:09 +64: test/task_test.dart: keeps optional description and completion state
+00:09 +65: All tests passed!

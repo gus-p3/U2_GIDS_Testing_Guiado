@@ -1,0 +1,6 @@
+
+> backend@1.0.0 start:test
+> node --env-file=.env.test src/server.js
+
+◇ injected env (0) from .env
+API listening on port 3100

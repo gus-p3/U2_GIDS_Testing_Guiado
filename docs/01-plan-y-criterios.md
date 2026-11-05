@@ -18,13 +18,14 @@ Antes de escribir una prueba me hice cinco preguntas por funcionalidad (PDF §1,
 
 ```
             ┌──────────────────────────────┐
-            │ E2E (1 recorrido, emulador)  │  lento, frágil → pocos
+            │ E2E: 1 recorrido de 9 pasos  │  lento, frágil → pocos
+            │ en emulador Pixel 8          │
             ├──────────────────────────────┤
-            │ API/integración (Supertest + │
-            │ PostgreSQL real _test): 69   │  medio
+            │ API/integración: Jest +      │
+            │ Supertest + PostgreSQL _test │  medio
             ├──────────────────────────────┤
-            │ Unitarias + widget: 8 Jest + │
-            │ 64 flutter_test              │  rápidas → muchas
+            │ Unitarias + widget:          │
+            │ Jest + flutter_test (65)     │  rápidas → muchas
             └──────────────────────────────┘
 ```
 
@@ -46,7 +47,7 @@ Funcionalidad elegida: **creación de tareas**.
 | **Alcance (incluido)** | API REST `/api/v1/auth/*`, `/api/v1/tasks/*`, `/health`; app Flutter (login, lista, crear, completar, borrar, logout). |
 | **Alcance (excluido)** | iOS real, despliegue en producción, escaneos de seguridad automáticos (ZAP, etc.), pruebas de carga sostenidas. |
 | **Riesgos** | Fuga entre usuarios (BOLA), tokens robados/reutilizados, pérdida de datos en la UI, mensajes que no explican cómo recuperarse, contraseñas mal hasheadas. |
-| **Entorno** | Windows 11, Node 22.23, Flutter 3.47.2 / Dart 3.13.2, PostgreSQL 16 en Docker (`ejercicio-test-db-test-1`, puerto 5434, tmpfs), emulador Android Pixel 8, API de pruebas en puerto 3100. |
+| **Entorno** | Windows 11, Node 22.23, Flutter 3.47.2 / Dart 3.13.2, PostgreSQL 16 en Docker (`ejercicio-test-db-test-1`, puerto 5434, tmpfs), emulador Android Pixel 8 (Android 14 / API 34), API de pruebas en puerto 3100, k6 v2.3.0. |
 | **Datos de prueba** | Solo cuentas sintéticas `*@example.test`. Se borran tras cada archivo de pruebas (`cleanupTestUsers`). La cuenta E2E `tester@example.test` se reinicia con `npm run seed:test`. |
 | **Tipos de prueba** | Unitarias, widget, API/integración, E2E, exploratorias, valores límite, seguridad básica, rendimiento (k6), accesibilidad, compatibilidad, smoke/regresión, CI. |
 | **Criterios de entrada** | Contenedor de BD sano, migraciones aplicadas, `.env.test` presente, la guarda `tests/setup-env.js` confirma que la BD termina en `_test`. |

@@ -38,7 +38,7 @@ while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
 const escape = (text) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const colour = (line) => {
   const safe = escape(line);
-  if (/✕|✗|\[E\]|FAIL|failed|Expected:|Error|level=error/.test(line)) return `<span class="bad">${safe}</span>`;
+  if (/✕|✗|\[E\]|FAIL|[1-9]\d* failed|Some tests failed|Expected:|Error:|Bad state|level=error|overflowed/.test(line)) return `<span class="bad">${safe}</span>`;
   if (/✓|✔|PASS|All tests passed|passed,|exit=0/.test(line)) return `<span class="ok">${safe}</span>`;
   if (/^\s*(Received|Actual|Which):/.test(line)) return `<span class="warn">${safe}</span>`;
   return safe;

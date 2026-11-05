@@ -55,7 +55,7 @@ Práctica del §9: actualizar una tarea enviando `ownerId`. La API **ignora** el
 | API6 Unrestricted access to sensitive flows | Login/registro/refresh con rate limit | ✅ | `rate-limit.test.js` |
 | API7 SSRF | La API no acepta URLs controladas por el usuario | ✅ (por diseño) | revisión de código |
 | API8 Security misconfiguration | Helmet (`nosniff`), sin `x-powered-by`, CORS restringido; HTTP solo en debug | ✅ (tras BUG-007) | `health.test.js`, manifest |
-| API9 Improper inventory management | Solo existe `/api/v1`; OpenAPI en `backend/openapi.yaml` | ⚠️ falta documentar `GET /tasks/:id` en el OpenAPI | — |
+| API9 Improper inventory management | Solo existe `/api/v1`; OpenAPI en `backend/openapi.yaml` | ✅ `GET /tasks/{taskId}` añadido al OpenAPI | `backend/openapi.yaml` |
 | API10 Unsafe consumption of APIs | La app valida el JSON (`Task.fromJson` → `FormatException`) y nunca muestra mensajes 5xx | ✅ | `task_test.dart`, `auth_repository_test.dart` |
 
 > Una prueba en verde **no prueba** que algo sea seguro (error común del PDF). Estas pruebas cubren los casos que se nos ocurrieron; no sustituyen una revisión de seguridad profesional.

@@ -25,6 +25,7 @@
 | 00:16 | `GET /tasks/{id}` de otro usuario | No existía la ruta `GET /tasks/:id` | Añadida para cumplir la prueba del §6; responde 404 idéntico al “no existe” |
 | 00:17 | Teclado abierto en pantalla de 320×568 | Diálogo desbordado 128 px | ❗ **BUG-006** |
 | 00:19 | Revisar manifest antes de correr en Android | `usesCleartextTraffic` en el manifest principal | ❗ **BUG-007** |
+| 00:20 | Primera corrida E2E real en el emulador | Crear una tarea sin descripción → “Check the submitted values.” | ❗ **BUG-008** (lo encontró el E2E, no la exploración) |
 
 ## Qué me sorprendió
 

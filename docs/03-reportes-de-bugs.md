@@ -14,6 +14,7 @@
 | BUG-005 | Subtítulo del login con contraste 4.13:1 (< 4.5:1 WCAG AA) | Baja | Media | Corregido |
 | BUG-006 | Diálogo **New Task** se desborda 128 px en teléfono pequeño con teclado | Media | Media | Corregido |
 | BUG-007 | `usesCleartextTraffic="true"` también en builds de release | Media | Alta | Corregido |
+| BUG-008 | Crear una tarea **sin descripción** desde la app falla con 400 | **Alta** | **Alta** | Corregido |
 | ENV-001 | Otro proceso local escuchaba en `127.0.0.1:3000` y respondía `/health` | — (entorno) | — | Mitigado: API de pruebas en 3100 |
 
 ---
@@ -105,6 +106,22 @@
 | **Corrección** | El atributo se movió a `android/app/src/debug/AndroidManifest.xml`: solo las builds de depuración pueden hablar HTTP con la API local `10.0.2.2`. |
 | **Severidad / Prioridad** | Media / Alta. |
 | **Verificación** | Build de depuración del E2E funciona contra `http://10.0.2.2:3100`. |
+
+## BUG-008 · Crear una tarea sin descripción falla (contrato app ↔ API roto)
+
+| Campo | Contenido |
+|---|---|
+| **Resumen** | La app envía `{"title": "...", "description": null}` cuando el usuario deja la descripción vacía; la API solo aceptaba `string` u omitir el campo, y respondía `400 VALIDATION_ERROR`. **Es el flujo principal de la app**: crear una tarea sin detalles. |
+| **Entorno** | App 1.0.0+1 debug en emulador Pixel 8 (Android 14) → API local `http://10.0.2.2:3100` → PostgreSQL `task_manager_test`. |
+| **Precondiciones** | Cuenta sintética `tester@example.test` sembrada. |
+| **Pasos** | 1. Iniciar sesión. 2. **New Task**. 3. Título “Check release flow”, descripción vacía. 4. **Save**. |
+| **Esperado** | El diálogo se cierra y la tarea aparece en la lista. |
+| **Obtenido** | El diálogo sigue abierto con “Check the submitted values.”; la tarea no se crea. Por curl: `400 … "field":"description","message":"Invalid input: expected string, received null"`. |
+| **Evidencia** | `evidence/screenshots/run1-bug008/05-task-created.png` (captura real del emulador), `evidence/logs/flutter-e2e-android-run1-bug008.txt`, `evidence/terminal/08-bug008-curl-before-fix.png` |
+| **Por qué nadie lo vio antes** | La prueba con mock del cliente aceptaba cualquier cuerpo; las pruebas de API nunca enviaban `null`. Solo la prueba **E2E** contra el servidor real lo reveló (lección del PDF §15). Además, la primera versión del E2E tenía un **falso positivo**: buscaba el texto “Check release flow” y lo encontraba dentro del campo del diálogo abierto. |
+| **Corrección** | Cliente: `TaskRepository.create` omite `description` si está vacía. Servidor: `createTaskSchema` acepta `null`, igual que ya lo hacía `updateTaskSchema`. E2E: espera la tarea dentro de un `ListTile` y verifica que el diálogo se cerró. |
+| **Severidad / Prioridad** | Alta / Alta — rompe el flujo principal para la mayoría de los usuarios. |
+| **Regresión** | `tasks.test.js` → “accepts description: null on create…”; `task_repository_test.dart` → “create omits description…”; E2E completo en verde (segunda corrida, 9 capturas). |
 
 ## ENV-001 · Puerto 3000 compartido con otro proyecto (problema de entorno)
 

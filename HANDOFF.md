@@ -24,7 +24,7 @@ ESTADO (verificado)
 - k6 corrido localmente (evidence/logs/k6-*.txt). CI en .github/workflows/tests.yml.
 - Ejercicio de romper/restaurar para el CI hecho (evidence/logs/ci-*.txt).
 - 8 bugs reales encontrados y corregidos: docs/03-reportes-de-bugs.md (BUG-001..008 + ENV-001).
-- Documentos listos: docs/01..05. Revisa el README.md para ver qué falta.
+- Documentos listos: docs/01..07, README.md con galería de evidencia (app + terminal).
 
 CÓMO LEVANTAR EL ENTORNO
 1. Docker Desktop encendido. En backend/: npm ci && npm run db:test:up && npm run db:test:migrate
@@ -45,12 +45,12 @@ REGLAS
 - No actives el Modo desarrollador de Windows ni cambies ajustes del sistema; pídeselo al usuario.
 - Haz commits pequeños con mensajes claros y súbelos a origin main.
 
-TAREAS PENDIENTES (si alguna ya está hecha según el README, sáltala)
-1. docs/06-rendimiento-accesibilidad-compatibilidad.md (§10, §11, §12 + matriz de dispositivos).
-2. docs/07-smoke-regresion-ci-mocks.md (§13 checklist de regresión, §14 CI y cobertura, §15 mocks vs integración;
-   usa BUG-008 como ejemplo de lo que un mock NO detecta).
-3. PNG de las salidas de terminal en evidence/terminal/ (backend, flutter, k6 500ms y 2ms, CI roto/restaurado,
-   y los logs before-fix).
-4. README.md final: resumen, cómo correr, tabla sección del PDF → archivos, galería de capturas, lecciones.
-5. Agregar GET /api/v1/tasks/{taskId} a backend/openapi.yaml (hallazgo API9 abierto).
+TAREAS PENDIENTES
+Las 15 secciones del PDF ya están resueltas (ver la tabla "Mapa" del README.md). Mejoras opcionales:
+1. Ejecutar el workflow de CI en GitHub Actions y corregir lo que falle (solo se replicó localmente).
+2. Pasada manual de accesibilidad con TalkBack y anotar los resultados en docs/06.
+3. Si el usuario activa el Modo desarrollador de Windows: correr el E2E con -d windows
+   (el helper de capturas ya soporta escritorio con --dart-define=SCREENSHOT_DIR=<ruta absoluta>).
+4. Ayudar al usuario a ANALIZAR y aprender del contenido: recorrer docs/01..07 y explicar
+   cada bug (BUG-001..008), por qué ocurrió y qué técnica del PDF lo encontró.
 ```
