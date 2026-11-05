@@ -1,0 +1,25 @@
+# Node
+node_modules/
+npm-debug.log*
+.env
+.env.test
+
+# Flutter / Dart
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Coverage
+coverage/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/
+
+# Local Android SDK path
+local.properties

@@ -1,0 +1,2 @@
+HTTP/1.1 400 Bad Request
+{"error":{"code":"VALIDATION_ERROR","message":"Check the submitted values.","details":[{"field":"description","message":"Invalid input: expected string, received null"}]}}

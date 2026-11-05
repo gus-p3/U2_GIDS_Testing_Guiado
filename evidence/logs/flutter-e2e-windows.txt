@@ -1,0 +1,28 @@
+00:00 +0: loading C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/integration_test/app_journey_test.dart
+00:00 +0 -1: loading C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/integration_test/app_journey_test.dart [E]
+  Failed to load "C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/integration_test/app_journey_test.dart":
+  Building with plugins requires symlink support.
+  
+  Please enable Developer Mode in your system settings. Run
+    start ms-settings:developers
+  to open settings.
+  package:flutter_tools/src/base/common.dart 34:3                    throwToolExit
+  package:flutter_tools/src/flutter_plugins.dart 1239:7              handleSymlinkException
+  package:flutter_tools/src/flutter_plugins.dart 1278:7              _createPlatformPluginSymlinks
+  package:flutter_tools/src/flutter_plugins.dart 1193:5              createPluginSymlinks
+  package:flutter_tools/src/windows/build_windows.dart 82:3          buildWindows
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/windows/windows_device.dart 60:5         WindowsDevice.buildForDevice
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/desktop_device.dart 108:7                DesktopDevice.startApp
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/integration_test_device.dart 59:39  IntegrationTestTestDevice.start
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/flutter_platform.dart 679:51        FlutterPlatform._startTest.<fn>
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/base/async_guard.dart 108:24             asyncGuard.<fn>
+  
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/integration_test/app_journey_test.dart: loading C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/integration_test/app_journey_test.dart

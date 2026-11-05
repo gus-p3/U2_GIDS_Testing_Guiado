@@ -1,0 +1,178 @@
+openapi: 3.0.3
+info:
+  title: Task Manager API
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api/v1
+paths:
+  /auth/register:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  minLength: 12
+      responses:
+        "201":
+          description: User registered successfully
+        "409":
+          description: Email already in use
+  /auth/login:
+    post:
+      summary: Authenticate user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          description: Authentication successful
+        "401":
+          description: Invalid email or password
+  /auth/refresh:
+    post:
+      summary: Rotate refresh token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [refreshToken]
+              properties:
+                refreshToken:
+                  type: string
+      responses:
+        "200":
+          description: Token pair refreshed
+        "401":
+          description: Invalid or revoked refresh token
+  /auth/logout:
+    post:
+      summary: Revoke refresh token family
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [refreshToken]
+              properties:
+                refreshToken:
+                  type: string
+      responses:
+        "204":
+          description: Logged out
+  /auth/logout-all:
+    post:
+      summary: Revoke all refresh tokens for authenticated user
+      security:
+        - bearerAuth: []
+      responses:
+        "204":
+          description: All user sessions revoked
+  /tasks:
+    get:
+      summary: List user tasks with pagination
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: page
+          schema: { type: integer, minimum: 1, default: 1 }
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, maximum: 100, default: 20 }
+      responses:
+        "200":
+          description: Current user's paginated tasks
+        "401":
+          description: Missing or invalid access token
+    post:
+      summary: Create a new task
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [title]
+              properties:
+                title:
+                  type: string
+                  maxLength: 120
+                description:
+                  type: string
+                  maxLength: 2000
+      responses:
+        "201":
+          description: Task created
+        "400":
+          description: Invalid request
+        "401":
+          description: Unauthorized
+  /tasks/{taskId}:
+    patch:
+      summary: Update task
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: taskId
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title: { type: string }
+                description: { type: string, nullable: true }
+                completed: { type: boolean }
+      responses:
+        "200":
+          description: Updated task
+        "404":
+          description: Task not found or not owned by user
+    delete:
+      summary: Delete task
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: taskId
+          required: true
+          schema: { type: string }
+      responses:
+        "204":
+          description: Task deleted
+        "404":
+          description: Task not found or not owned by user
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

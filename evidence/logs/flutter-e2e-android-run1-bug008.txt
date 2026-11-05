@@ -1,0 +1,212 @@
+Resolving dependencies...
+Downloading packages...
+  code_assets 1.2.1 (2.1.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  hooks 2.0.2 (2.2.0 available)
+  jni 1.1.0 (1.1.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  objective_c 9.5.0 (9.6.3 available)
+  record_use 0.6.0 (1.1.1 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+Got dependencies!
+10 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'assembleDebug'...                            203.0s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...        2,053ms
+I/Choreographer(20777): Skipped 606 frames!  The application may be doing too much work on its main thread.
+D/FlutterRenderer(20777): Width is zero. 0,0
+W/OpenGLRenderer(20777): Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+W/OpenGLRenderer(20777): Failed to initialize 101010-2 format, error = EGL_SUCCESS
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+I/Gralloc4(20777): mapper 4.x is not supported
+E/OpenGLRenderer(20777): Unable to match the desired swap behavior.
+I/Choreographer(20777): Skipped 394 frames!  The application may be doing too much work on its main thread.
+D/ProfileInstaller(20777): Installing profile for com.example.mobile
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:63695/PdovvAM2vFg=/
+VMServiceFlutterDriver: Isolate found with number: 7536223973208511
+VMServiceFlutterDriver: Isolate 7536223973208511 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+W/Choreographer(20777): Frame time is 0.563418 ms in the future!  Check that graphics HAL is generating vsync timestamps using the correct timebase.
+I/flutter (20777): 00:00 +0: user can sign in, create and complete a task, and log out
+VMServiceFlutterDriver: Connected to Flutter application.
+I/Choreographer(20777): Skipped 59 frames!  The application may be doing too much work on its main thread.
+I/Choreographer(20777): Skipped 104 frames!  The application may be doing too much work on its main thread.
+I/OpenGLRenderer(20777): Davey! duration=1897ms; Flags=1, FrameTimelineVsyncId=6202770, IntendedVsync=20705618793893, Vsync=20707352127157, InputEventId=0, HandleInputStart=20707362111584, AnimationStart=20707362111584, PerformTraversalsStart=20707362111584, DrawStart=20707374111585, FrameDeadline=20705635460559, FrameInterval=20707362111584, FrameStartTime=16666666, SyncQueued=20707378111585, SyncStart=20707384680376, IssueDrawCommandsStart=20707388764832, SwapBuffers=20707464171695, FrameCompleted=20707522749985, DequeueBufferDuration=52406859, QueueBufferDuration=370333, GpuCompleted=20707505032993, SwapBuffersCompleted=20707522749985, DisplayPresentTime=0, CommandSubmissionCompleted=20707464171695, 
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+D/CompatibilityChangeReporter(20777): Compat change id reported: 236825255; UID 10200; state: ENABLED
+I/ImeTracker(20777): com.example.mobile:1cb21e55: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(20777): showSoftInput() view=io.flutter.embedding.android.FlutterView{a644be4 VFE...... .F....ID 0,0-1080,2337 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker(20777): com.example.mobile:3abb6454: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(20777): showSoftInput() view=io.flutter.embedding.android.FlutterView{a644be4 VFE...... .F....ID 0,0-1080,2337 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/Choreographer(20777): Skipped 33 frames!  The application may be doing too much work on its main thread.
+D/EGL_emulation(20777): app_time_stats: avg=1999.53ms min=172.23ms max=4625.15ms count=3
+D/InputConnectionAdaptor(20777): The input method toggled cursor monitoring on
+D/EGL_emulation(20777): app_time_stats: avg=925.68ms min=385.89ms max=1348.87ms count=3
+I/ImeTracker(20777): com.example.mobile:3284f386: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(20777): showSoftInput() view=io.flutter.embedding.android.FlutterView{a644be4 VFE...... .F...... 0,0-1080,2337 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker(20777): com.example.mobile:e6101b44: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(20777): showSoftInput() view=io.flutter.embedding.android.FlutterView{a644be4 VFE...... .F...... 0,0-1080,2337 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+W/RemoteInputConnectionImpl(20777): getSurroundingText on inactive InputConnection
+D/EGL_emulation(20777): app_time_stats: avg=183.03ms min=23.77ms max=402.74ms count=6
+D/EGL_emulation(20777): app_time_stats: avg=3515.45ms min=3515.45ms max=3515.45ms count=1
+D/InsetsController(20777): show(ime(), fromIme=true)
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/InsetsController(20777): show(ime(), fromIme=true)
+I/ImeTracker(20777): com.example.mobile:3abb6454: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/InputConnectionAdaptor(20777): The input method toggled cursor monitoring on
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/InsetsController(20777): show(ime(), fromIme=true)
+I/ImeTracker(20777): com.example.mobile:e6101b44: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+I/ImeTracker(20777): com.example.mobile:1cb21e55: onShown
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/EGL_emulation(20777): app_time_stats: avg=480.99ms min=59.46ms max=1110.53ms count=4
+D/EGL_emulation(20777): app_time_stats: avg=220.18ms min=27.86ms max=735.04ms count=6
+I/ImeTracker(20777): com.example.mobile:2c94f969: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+D/EGL_emulation(20777): app_time_stats: avg=255.24ms min=20.06ms max=1804.00ms count=10
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+W/WindowOnBackDispatcher(20777): sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@6184737 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@6647614
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+I/ImeTracker(20777): com.example.mobile:50dbd3fc: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+I/ImeTracker(20777): com.example.mobile:2c94f969: onHidden
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/EGL_emulation(20777): app_time_stats: avg=851.75ms min=439.93ms max=1263.56ms count=2
+W/WindowOnBackDispatcher(20777): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(20777): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+I/ImeTracker(20777): com.example.mobile:8d60c943: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(20777): showSoftInput() view=io.flutter.embedding.android.FlutterView{a644be4 VFE...... .F...... 0,0-1080,2337 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+I/ImeTracker(20777): com.example.mobile:c0898bcc: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(20777): showSoftInput() view=io.flutter.embedding.android.FlutterView{a644be4 VFE...... .F...... 0,0-1080,2337 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InputConnectionAdaptor(20777): The input method toggled cursor monitoring on
+I/ImeTracker(20777): com.example.mobile:b54b5cf0: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+D/InputMethodManager(20777): showSoftInput() view=io.flutter.embedding.android.FlutterView{a644be4 VFE...... .F...... 0,0-1080,2337 #1 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+D/InsetsController(20777): show(ime(), fromIme=true)
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/EGL_emulation(20777): app_time_stats: avg=370.29ms min=19.24ms max=2127.58ms count=7
+D/InsetsController(20777): show(ime(), fromIme=true)
+I/ImeTracker(20777): com.example.mobile:b54b5cf0: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+I/ImeTracker(20777): com.example.mobile:c0898bcc: onShown
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/EGL_emulation(20777): app_time_stats: avg=277.59ms min=66.34ms max=1068.56ms count=7
+D/EGL_emulation(20777): app_time_stats: avg=289.17ms min=3.19ms max=1392.03ms count=6
+I/flutter (20777): 
+I/flutter (20777): Warning: A call to tap() with finder "Found 1 widget with key [<'add-task-button'>]: [
+I/flutter (20777):   FloatingActionButton-[<'add-task-button'>](hero, extended, dependencies: [InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#14e19]]),
+I/flutter (20777): ]" derived an Offset (Offset(330.7, 533.9)) that would not hit test on the specified widget.
+I/flutter (20777): Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+I/flutter (20777): The finder corresponds to this RenderBox: RenderMergeSemantics#dde14 relayoutBoundary=up4
+I/flutter (20777): The hit test result at that offset is: HitTestResult(_RenderColoredBox#af2a7@Offset(330.7, 533.9), RenderConstrainedBox#4de04@Offset(330.7, 533.9), RenderMouseRegion#a3385@Offset(330.7, 533.9), RenderSemanticsAnnotations#d32c7@Offset(330.7, 533.9), RenderPointerListener#e62d8@Offset(330.7, 533.9), RenderSemanticsGestureHandler#c568d@Offset(330.7, 533.9), RenderExcludeSemantics#aa5d2@Offset(330.7, 533.9), RenderBlockSemantics#0b636@Offset(330.7, 533.9), RenderIgnorePointer#1bb77@Offset(330.7, 533.9), RenderSemanticsAnnotations#29b9a@Offset(330.7, 533.9), _RenderTheater#adf70@Offset(330.7, 533.9), RenderAbsorbPointer#ff211@Offset(330.7, 533.9), RenderPointerListener#55232@Offset(330.7, 533.9), RenderSemanticsAnnotations#c224e@Offset(330.7, 533.9), RenderSemanticsAnnotations#31026@Offset(330.7, 533.9), RenderSemanticsAnnotations#47e0b@Offset(330.7, 533.9), RenderSemanticsAnnotations#f2b32@Offset(330.7, 533.9), RenderTapRegionSurface#b769d@Offset(330.7, 533.9), RenderSemanticsAnnotations#f6175@Offset(330.7, 533.
+I/flutter (20777): #0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+I/flutter (20777): #1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+I/flutter (20777): #2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+I/flutter (20777): #3      main.<anonymous closure> (file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/integration_test/app_journey_test.dart:126:18)
+I/flutter (20777): <asynchronous suspension>
+I/flutter (20777): #4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+I/flutter (20777): <asynchronous suspension>
+I/flutter (20777): #5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+I/flutter (20777): <asynchronous suspension>
+I/flutter (20777): #6      TestWidgetsFlutterBinding._createTestCompletionHandler.<anonymous closure> (package:flutter_test/src/binding.dart:1707:12)
+I/flutter (20777): <asynchronous suspension>
+I/flutter (20777): To silence this warning, pass "warnIfMissed: false" to "tap()".
+I/flutter (20777): To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+I/flutter (20777): 
+I/ImeTracker(20777): com.example.mobile:87e1f436: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+D/EGL_emulation(20777): app_time_stats: avg=255.27ms min=48.74ms max=689.95ms count=6
+W/WindowOnBackDispatcher(20777): sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@6184737 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@be0c8e5
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+I/flutter (20777): ══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+I/flutter (20777): The following StateError was thrown running a test:
+I/flutter (20777): Bad state: No element
+I/flutter (20777): 
+I/flutter (20777): When the exception was thrown, this was the stack:
+I/flutter (20777): #0      Iterable.single (dart:core/iterable.dart:694:25)
+I/flutter (20777): #1      WidgetController.state (package:flutter_test/src/controller.dart:932:42)
+I/flutter (20777): #2      WidgetTester.showKeyboard.<anonymous closure> (package:flutter_test/src/widget_tester.dart:1125:42)
+I/flutter (20777): #5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+I/flutter (20777): #6      WidgetTester.showKeyboard (package:flutter_test/src/widget_tester.dart:1124:27)
+I/flutter (20777): #7      WidgetTester.enterText.<anonymous closure> (package:flutter_test/src/widget_tester.dart:1160:13)
+I/flutter (20777): #10     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+I/flutter (20777): #11     WidgetTester.enterText (package:flutter_test/src/widget_tester.dart:1159:27)
+I/flutter (20777): #12     main.<anonymous closure> (file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/integration_test/app_journey_test.dart:128:18)
+I/flutter (20777): <asynchronous suspension>
+I/flutter (20777): #13     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+I/flutter (20777): <asynchronous suspension>
+I/flutter (20777): #14     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+I/flutter (20777): <asynchronous suspension>
+I/flutter (20777): #15     TestWidgetsFlutterBinding._createTestCompletionHandler.<anonymous closure> (package:flutter_test/src/binding.dart:1707:12)
+I/flutter (20777): <asynchronous suspension>
+I/flutter (20777): (elided 4 frames from dart:async)
+I/flutter (20777): 
+I/flutter (20777): The test description was:
+I/flutter (20777):   user can sign in, create and complete a task, and log out
+I/flutter (20777): ════════════════════════════════════════════════════════════════════════════════════════════════════
+I/flutter (20777): 00:20 +0: user can sign in, create and complete a task, and log out [E]
+I/flutter (20777):   Test failed. See exception logs above.
+I/flutter (20777):   The test description was: user can sign in, create and complete a task, and log out
+I/flutter (20777):   
+I/Choreographer(20777): Skipped 51 frames!  The application may be doing too much work on its main thread.
+I/ImeTracker(20777): com.example.mobile:a5d3e890: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT_BY_INSETS_API
+I/ImeTracker(20777): com.example.mobile:87e1f436: onHidden
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/FlutterJNI(20777): Sending viewport metrics to the engine.
+D/EGL_emulation(20777): app_time_stats: avg=306.81ms min=12.74ms max=890.72ms count=6
+I/OpenGLRenderer(20777): Davey! duration=904ms; Flags=0, FrameTimelineVsyncId=6204822, IntendedVsync=20724985459785, Vsync=20725835459751, InputEventId=0, HandleInputStart=20725847921360, AnimationStart=20725847927232, PerformTraversalsStart=20725883056057, DrawStart=20725883388674, FrameDeadline=20725035459783, FrameInterval=20725846157574, FrameStartTime=16666666, SyncQueued=20725883574988, SyncStart=20725885160195, IssueDrawCommandsStart=20725885254644, SwapBuffers=20725887859204, FrameCompleted=20725891917474, DequeueBufferDuration=9258, QueueBufferDuration=1203177, GpuCompleted=20725891561458, SwapBuffersCompleted=20725891917474, DisplayPresentTime=0, CommandSubmissionCompleted=20725887859204, 
+I/flutter (20777): 00:20 +0 -1: (tearDownAll)
+I/flutter (20777): 00:20 +1 -1: Some tests failed.
+Failure Details:
+Failure in method: user can sign in, create and complete a task, and log out
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞═════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.state (package:flutter_test/src/controller.dart:932:42)
+#2      WidgetTester.showKeyboard.<anonymous closure> (package:flutter_test/src/widget_tester.dart:1125:42)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetTester.showKeyboard (package:flutter_test/src/widget_tester.dart:1124:27)
+#7      WidgetTester.enterText.<anonymous closure> (package:flutter_test/src/widget_tester.dart:1160:13)
+#10     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#11     WidgetTester.enterText (package:flutter_test/src/widget_tester.dart:1159:27)
+#12     main.<anonymous closure> (file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/integration_test/app_journey_test.dart:128:18)
+<asynchronous suspension>
+#13     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#14     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#15     TestWidgetsFlutterBinding._createTestCompletionHandler.<anonymous closure> (package:flutter_test/src/binding.dart:1707:12)
+<asynchronous suspension>
+(elided 4 frames from dart:async)
+
+The test description was:
+  user can sign in, create and complete a task, and log out
+═════════════════════════════════════════════════════════════════
+
+end of failure 1
+
+
+

@@ -1,0 +1,52 @@
+# PDF §14: run backend and Flutter tests on every pull request and push to main.
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    services:
+      # Disposable PostgreSQL, same name/credentials as backend/.env.test.example.
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: task_manager_test
+          POSTGRES_USER: test_user
+          POSTGRES_PASSWORD: local_test_only_password
+        ports:
+          - 5434:5432
+        options: >-
+          --health-cmd "pg_isready -U test_user -d task_manager_test"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+      - run: cp .env.test.example .env.test
+      - run: npm ci
+      - run: npm run db:test:migrate
+      - run: npm run test:coverage
+
+  flutter:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test --coverage

@@ -1,0 +1,146 @@
+PASS tests/api/auth.test.js (14.155 s)
+  refresh-token lifecycle
+    √ rotation returns a different refresh token (824 ms)
+    √ reuse of an old token revokes the newer token of the same family (579 ms)
+    √ logout makes the refresh token unusable (551 ms)
+    √ logout-all revokes every session of the user, but not other users (1362 ms)
+    √ logout-all requires authentication (6 ms)
+    √ a random, never-issued refresh token is rejected (12 ms)
+  broken authentication: invalid, expired and forged access tokens
+    √ a correctly signed, current token is accepted (control case) (18 ms)
+    √ an expired access token is rejected (6 ms)
+    √ a token signed with the wrong secret is rejected (7 ms)
+    √ an unsigned alg=none token is rejected (6 ms)
+    √ a token of the wrong type is rejected (6 ms)
+    √ a token for another audience is rejected (8 ms)
+    √ a malformed Authorization header "Bearer" is rejected (6 ms)
+    √ a malformed Authorization header "Basic abc" is rejected (7 ms)
+    √ a malformed Authorization header "Bearer a b" is rejected (4 ms)
+    √ a malformed Authorization header "token-without-scheme" is rejected (6 ms)
+  login failures do not reveal which accounts exist
+    √ unknown email and wrong password produce the same response (1237 ms)
+    √ registering the same email twice returns 409 (848 ms)
+    √ email is normalised so case variants cannot create duplicate accounts (867 ms)
+  password boundary values (PDF §8 practice exercise)
+    √ empty -> 400 (7 ms)
+    √ just under minimum (11) -> 400 (7 ms)
+    √ minimum valid length (12) -> 201 (438 ms)
+    √ typical value -> 201 (535 ms)
+    √ maximum valid length (72) -> 201 (403 ms)
+    √ just over maximum (73) -> 400 (6 ms)
+    √ wrong type (number) -> 400 (5 ms)
+    √ passwords that differ only after byte 72 are not interchangeable (BUG-003 regression) (8 ms)
+    √ multi-byte characters count as bytes, not characters, against the 72-byte limit (5 ms)
+
+PASS tests/api/tasks.test.js (6.683 s)
+  task API security (PDF §6)
+    √ rejects task creation without authentication (16 ms)
+    √ rejects an empty title (405 ms)
+    √ does not let one user read another user task (805 ms)
+  practice exercise §6: invalid id, missing title, cross-user update
+    √ a malformed task id is rejected with 400 before touching the database (7 ms)
+    √ an over-long task id is rejected with 400 (5 ms)
+    √ a well-formed id that does not exist returns 404 (8 ms)
+    √ foreign and missing tasks get the identical response (no existence disclosure) (16 ms)
+    √ a missing title is rejected (10 ms)
+    √ a user cannot update another user task, and the task stays unchanged (18 ms)
+    √ a user cannot delete another user task (16 ms)
+    √ the list endpoint only returns the caller's tasks (9 ms)
+    √ the owner can complete and then delete their own task (18 ms)
+  negative input (PDF §9 step 1)
+    √ rejects number title with a safe 400 (5 ms)
+    √ rejects null title with a safe 400 (4 ms)
+    √ rejects array title with a safe 400 (9 ms)
+    √ rejects 121-char title with a safe 400 (6 ms)
+    √ rejects 2001-char description with a safe 400 (8 ms)
+    √ accepts a title at the exact 120-char maximum (8 ms)
+    √ rejects malformed JSON with 400 and no stack trace (12 ms)
+    √ rejects an oversized body (> 20 kb) with 413 (6 ms)
+    √ rejects pagination limit=0 (6 ms)
+    √ rejects pagination limit=101 (5 ms)
+    √ rejects pagination limit=-1 (6 ms)
+    √ rejects pagination limit=1' OR '1'='1 (6 ms)
+    √ a PATCH with no fields is rejected (13 ms)
+  injection-looking and markup-like input (PDF §9 steps 2-3)
+    √ an SQL-injection-looking title is stored as plain text and leaks nothing (866 ms)
+    √ markup is returned verbatim as JSON data, never as HTML (543 ms)
+  object property-level authorization (PDF §9 practice exercise)
+    √ ownerId sent on create is ignored; the server derives ownership (998 ms)
+    √ ownerId sent on update is ignored and ownership is retained (1084 ms)
+
+PASS tests/api/rate-limit.test.js
+  login rate limiting
+    √ returns a safe 429 after the configured number of attempts (1339 ms)
+    √ the refresh endpoint is limited too (39 ms)
+
+PASS tests/api/health.test.js
+  health endpoint (smoke)
+    √ returns a healthy status (20 ms)
+    √ does not advertise the framework and sends safe headers (8 ms)
+
+PASS tests/unit/validation.test.js
+  validateTitle
+    √ trims a valid title (1 ms)
+    √ rejects a blank title (12 ms)
+    √ rejects a title longer than the limit
+    √ rejects non-string input 42 (2 ms)
+    √ rejects non-string input null (1 ms)
+    √ rejects non-string input undefined (1 ms)
+    √ rejects non-string input true
+    √ rejects non-string input {}
+    √ rejects non-string input ["Plan tests"]
+    partition: empty
+      √ rejects ""
+    partition: whitespace only
+      √ rejects "   " (1 ms)
+    partition: minimum valid length
+      √ accepts "a"
+    partition: typical valid title
+      √ accepts "Plan tests"
+    partition: maximum valid length (120)
+      √ accepts "120 chars" (1 ms)
+    partition: just over maximum (121)
+      √ rejects "121 chars"
+    partition: 120 chars after trimming surrounding spaces
+      √ accepts "124 chars"
+
+
+=============================== Coverage summary ===============================
+Statements   : 98.76% ( 240/243 )
+Branches     : 79.72% ( 59/74 )
+Functions    : 100% ( 58/58 )
+Lines        : 99.13% ( 230/232 )
+================================================================================
+------------------------------|---------|----------|---------|---------|-------------------
+File                          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------------|---------|----------|---------|---------|-------------------
+All files                     |   98.76 |    79.72 |     100 |   99.13 |                   
+ src                          |   97.22 |       50 |     100 |   97.14 |                   
+  app.js                      |   96.29 |       50 |     100 |   96.15 | 36                
+  config.js                   |     100 |       50 |     100 |     100 | 5                 
+ src/middleware               |   96.77 |       80 |     100 |     100 |                   
+  auth.middleware.js          |     100 |      100 |     100 |     100 |                   
+  error.middleware.js         |   85.71 |    64.28 |     100 |     100 | 13-19             
+  validate.middleware.js      |     100 |      100 |     100 |     100 |                   
+ src/repositories             |     100 |    71.42 |     100 |     100 |                   
+  refresh-token.repository.js |     100 |       60 |     100 |     100 | 5,15              
+  task.repository.js          |     100 |      100 |     100 |     100 |                   
+ src/routes                   |     100 |      100 |     100 |     100 |                   
+  auth.routes.js              |     100 |      100 |     100 |     100 |                   
+  task.routes.js              |     100 |      100 |     100 |     100 |                   
+ src/schemas                  |     100 |      100 |     100 |     100 |                   
+  auth.schema.js              |     100 |      100 |     100 |     100 |                   
+  task.schema.js              |     100 |      100 |     100 |     100 |                   
+ src/services                 |   98.52 |    88.46 |     100 |   98.41 |                   
+  auth.service.js             |   97.91 |       85 |     100 |   97.72 | 34                
+  task.service.js             |     100 |      100 |     100 |     100 |                   
+ src/tasks                    |     100 |      100 |     100 |     100 |                   
+  validation.js               |     100 |      100 |     100 |     100 |                   
+ src/utils                    |     100 |      100 |     100 |     100 |                   
+  tokens.js                   |     100 |      100 |     100 |     100 |                   
+------------------------------|---------|----------|---------|---------|-------------------
+Test Suites: 5 passed, 5 total
+Tests:       77 passed, 77 total
+Snapshots:   0 total
+Time:        24.505 s
+Ran all test suites.

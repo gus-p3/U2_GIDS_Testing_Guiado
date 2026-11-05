@@ -1,0 +1,43 @@
+PASS tests/api/auth.test.js (18.601 s)
+FAIL tests/api/tasks.test.js (5.736 s)
+  ● negative input (PDF §9 step 1) › rejects 121-char title with a safe 400
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+      148 |   ])('rejects %s with a safe 400', async (_name, body) => {
+      149 |     const response = await request(app).post('/api/v1/tasks').set(auth(token)).send(body);
+    > 150 |     expect(response.status).toBe(400);
+          |                             ^
+      151 |     expect(response.body.error.code).toBe('VALIDATION_ERROR');
+      152 |     expect(JSON.stringify(response.body)).not.toMatch(/prisma|stack|at \w+ \(/i);
+      153 |   });
+
+      at toBe (tests/api/tasks.test.js:150:29)
+
+PASS tests/api/rate-limit.test.js
+PASS tests/api/health.test.js
+FAIL tests/unit/validation.test.js
+  ● validateTitle › rejects a title longer than the limit
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      16 |
+      17 |   test('rejects a title longer than the limit', () => {
+    > 18 |     expect(() => validateTitle('a'.repeat(121))).toThrow();
+         |                                                  ^
+      19 |   });
+      20 |
+      21 |   // §8 boundary table for a title of 1..120 characters.
+
+      at Object.toThrow (tests/unit/validation.test.js:18:50)
+
+Test Suites: 2 failed, 3 passed, 5 total
+Tests:       2 failed, 75 passed, 77 total
+Snapshots:   0 total
+Time:        28.244 s, estimated 34 s
+Ran all test suites.

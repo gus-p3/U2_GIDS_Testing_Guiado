@@ -1,0 +1,11 @@
+PASS tests/api/tasks.test.js (6.344 s)
+PASS tests/unit/validation.test.js
+PASS tests/api/auth.test.js (6.856 s)
+PASS tests/api/rate-limit.test.js
+PASS tests/api/health.test.js
+
+Test Suites: 5 passed, 5 total
+Tests:       77 passed, 77 total
+Snapshots:   0 total
+Time:        15.305 s, estimated 27 s
+Ran all test suites.

@@ -1,0 +1,90 @@
+FAIL tests/api/auth.test.js (7.262 s)
+  refresh-token lifecycle
+    ○ skipped rotation returns a different refresh token
+    ○ skipped reuse of an old token revokes the newer token of the same family
+    ○ skipped logout makes the refresh token unusable
+    ○ skipped logout-all revokes every session of the user, but not other users
+    ○ skipped logout-all requires authentication
+    ○ skipped a random, never-issued refresh token is rejected
+  broken authentication: invalid, expired and forged access tokens
+    ○ skipped a correctly signed, current token is accepted (control case)
+    ○ skipped an expired access token is rejected
+    ○ skipped a token signed with the wrong secret is rejected
+    ○ skipped an unsigned alg=none token is rejected
+    ○ skipped a token of the wrong type is rejected
+    ○ skipped a token for another audience is rejected
+    ○ skipped a malformed Authorization header "Bearer" is rejected
+    ○ skipped a malformed Authorization header "Basic abc" is rejected
+    ○ skipped a malformed Authorization header "Bearer a b" is rejected
+    ○ skipped a malformed Authorization header "token-without-scheme" is rejected
+  login failures do not reveal which accounts exist
+    ○ skipped unknown email and wrong password produce the same response
+    ○ skipped registering the same email twice returns 409
+    ○ skipped email is normalised so case variants cannot create duplicate accounts
+  password boundary values (PDF §8 practice exercise)
+    × just over maximum (73) -> 400 (842 ms)
+    × passwords that differ only after byte 72 are not interchangeable (BUG-003 regression) (1116 ms)
+    × multi-byte characters count as bytes, not characters, against the 72-byte limit (557 ms)
+    ○ skipped empty -> 400
+    ○ skipped just under minimum (11) -> 400
+    ○ skipped minimum valid length (12) -> 201
+    ○ skipped typical value -> 201
+    ○ skipped maximum valid length (72) -> 201
+    ○ skipped wrong type (number) -> 400
+
+  ● password boundary values (PDF §8 practice exercise) › just over maximum (73) -> 400
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+      179 |     trackEmail(email);
+      180 |     const response = await register(email, password);
+    > 181 |     expect(response.status).toBe(expected);
+          |                             ^
+      182 |   });
+      183 |
+      184 |   test('passwords that differ only after byte 72 are not interchangeable (BUG-003 regression)', async () => {
+
+      at toBe (tests/api/auth.test.js:181:29)
+
+  ● password boundary values (PDF §8 practice exercise) › passwords that differ only after byte 72 are not interchangeable (BUG-003 regression)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 200
+
+      189 |     if (registration.status === 400) return; // Policy rejects > 72 bytes: the ambiguity cannot happen.
+      190 |     expect(registration.status).toBe(201);
+    > 191 |     expect((await login(email, `${base}Y`)).status).toBe(401);
+          |                                                     ^
+      192 |   });
+      193 |
+      194 |   test('multi-byte characters count as bytes, not characters, against the 72-byte limit', async () => {
+
+      at Object.toBe (tests/api/auth.test.js:191:53)
+
+  ● password boundary values (PDF §8 practice exercise) › multi-byte characters count as bytes, not characters, against the 72-byte limit
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 201
+
+      196 |     trackEmail(email);
+      197 |     // 37 x "ñ" = 37 characters but 74 UTF-8 bytes.
+    > 198 |     expect((await register(email, 'ñ'.repeat(37))).status).toBe(400);
+          |                                                            ^
+      199 |   });
+      200 | });
+      201 |
+
+      at Object.toBe (tests/api/auth.test.js:198:60)
+
+Test Suites: 1 failed, 1 total
+Tests:       3 failed, 25 skipped, 28 total
+Snapshots:   0 total
+Time:        7.656 s, estimated 15 s
+Ran all test suites matching /tests\\api\\auth.test.js/i with tests matching "byte 72|73|multi-byte".

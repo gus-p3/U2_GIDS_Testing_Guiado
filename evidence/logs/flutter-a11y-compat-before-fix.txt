@@ -1,0 +1,138 @@
+00:00 +0: loading C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart
+00:00 +0: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: task list meets tap-target, label and contrast guidelines
+00:01 +1: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart: task list renders without overflow on small phone (iPhone SE 1st gen, 320x568)
+00:01 +2: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: login screen meets tap-target, label and contrast guidelines
+00:01 +3: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: login screen meets tap-target, label and contrast guidelines
+00:01 +4: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: login screen meets tap-target, label and contrast guidelines
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: Text contrast should follow WCAG guidelines
+  Actual: <Instance of 'WidgetTester'>
+   Which: SemanticsNode#8(Rect.fromLTRB(0.0, 112.0, 356.0, 152.0), label: "Sign in to access your
+secure tasks", textDirection: ltr):
+          Expected contrast ratio of at least 4.5 but found 4.13 for a font size of 14.0.
+          The computed colors was:
+          light - Color(alpha: 1.0000, red: 0.9686, green: 0.9490, blue: 0.9804, colorSpace:
+ColorSpace.sRGB), dark - Color(alpha: 1.0000, red: 0.4745, green: 0.4549, blue: 0.4941, colorSpace:
+ColorSpace.sRGB)
+          See also: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _expect.<anonymous closure> (package:matcher/src/expect/expect.dart:155:13)
+<asynchronous suspension>
+<asynchronous suspension>
+#8      expectLater.<anonymous closure> (package:flutter_test/src/widget_tester.dart:508:19)
+<asynchronous suspension>
+#9      expectGuidelines (file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart:49:3)
+<asynchronous suspension>
+#10     main.<anonymous closure> (file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart:69:5)
+<asynchronous suspension>
+#11     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#12     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 7 frames from dart:async and package:stack_trace)
+
+The test description was:
+  login screen meets tap-target, label and contrast guidelines
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +4 -1: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart: login screen fits on mainstream phone (393x852)
+00:02 +4 -1: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: login screen meets tap-target, label and contrast guidelines [E]
+  Test failed. See exception logs above.
+  The test description was: login screen meets tap-target, label and contrast guidelines
+  
+00:02 +5 -1: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: screen readers hear which task each checkbox controls
+00:02 +6 -1: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart: task list renders without overflow on tablet portrait (820x1180)
+00:02 +7 -1: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: login validation errors are announced as text
+00:02 +8 -1: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: login validation errors are announced as text
+00:02 +9 -1: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart: task list renders without overflow on desktop window (1280x800)
+00:02 +9 -1: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: task list and login stay usable at text scale 1.5x
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: _AssertionError:<'package:riverpod/src/core/provider_container.dart': Failed assertion:
+line 1224 pos 7: '_debugOverridesLength == overrides.length': Tried to change the number of
+overrides. This is not allowed – overrides cannot be removed/added, they can only be updated.>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart:114:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart line 114
+The test description was:
+  task list and login stay usable at text scale 1.5x
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +9 -2: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart: task list renders without overflow on desktop window (1280x800)
+00:02 +9 -2: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: task list and login stay usable at text scale 1.5x [E]
+  Test failed. See exception logs above.
+  The test description was: task list and login stay usable at text scale 1.5x
+  
+00:02 +10 -2: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: task list and login stay usable at text scale 2.0x
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: _AssertionError:<'package:riverpod/src/core/provider_container.dart': Failed assertion:
+line 1224 pos 7: '_debugOverridesLength == overrides.length': Tried to change the number of
+overrides. This is not allowed – overrides cannot be removed/added, they can only be updated.>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart:114:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart line 114
+The test description was:
+  task list and login stay usable at text scale 2.0x
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +10 -3: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart: login screen fits on desktop window (1280x800)
+00:02 +10 -3: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: task list and login stay usable at text scale 2.0x [E]
+  Test failed. See exception logs above.
+  The test description was: task list and login stay usable at text scale 2.0x
+  
+00:02 +11 -3: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart: create dialog fits a small phone with the keyboard open
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: FlutterError:<A RenderFlex overflowed by 128 pixels on the bottom.>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart:98:5)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart line 98
+The test description was:
+  create dialog fits a small phone with the keyboard open
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:04 +11 -4: C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart: create dialog fits a small phone with the keyboard open [E]
+  Test failed. See exception logs above.
+  The test description was: create dialog fits a small phone with the keyboard open
+  
+00:04 +11 -4: Some tests failed.
+
+Failing tests:
+  C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: login screen meets tap-target, label and contrast guidelines
+  C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: task list and login stay usable at text scale 1.5x
+  C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/accessibility_test.dart: task list and login stay usable at text scale 2.0x
+  C:/Users/brand/Documentos/GIDS6102/ejecicios_flutter/u2/ejercicio_test/mobile/test/screen_size_test.dart: create dialog fits a small phone with the keyboard open
